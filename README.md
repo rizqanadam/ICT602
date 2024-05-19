@@ -1,0 +1,2 @@
+# ICT602
+Individual Assignment (ADAM RIZQAN BIN SANORAZMAN)
