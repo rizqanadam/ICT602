@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BFE8E4"
+    tools:context=".MainActivity">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#009688"
+        android:elevation="4dp"
+        android:theme="?attr/actionBarTheme" />
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        android:text="BILL CALCULATOR"
+        android:textColor="#000000"
+        android:textSize="28sp"
+        android:textStyle="bold" />
+
+    <!-- EditText for Units Used -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilUnitUsed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/title"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/estUnitUsed"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Units Used"
+            android:inputType="numberDecimal"
+            android:textColor="#000000" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- EditText for Rebate -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilRebate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilUnitUsed"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/estRebate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Rebate (%)"
+            android:inputType="numberDecimal"
+            android:textColor="#000000" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Switch for Rebate Activation -->
+    <Switch
+        android:id="@+id/switchRebate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tilRebate"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:text="Activate Rebate"
+        android:textColor="#000000"
+        android:textSize="16sp" />
+
+    <!-- Button to Calculate -->
+    <Button
+        android:id="@+id/btnCalc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/switchRebate"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#009688"
+        android:elevation="4dp"
+        android:text="Calculate"
+        android:textColor="#FFFFFF"
+        android:onClick="calculateBill" />
+
+    <!-- Button to Reset -->
+    <Button
+        android:id="@+id/btnReset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnCalc"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="#009688"
+        android:elevation="4dp"
+        android:text="Reset"
+        android:textColor="#FFFFFF"
+        android:onClick="resetFields" />
+
+    <!-- TextView to Display Result -->
+    <TextView
+        android:id="@+id/result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnReset"
+        android:layout_marginTop="16dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#000000" />
+
+    <!-- Error Message -->
+    <TextView
+        android:id="@+id/errorMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="40dp"
+        android:textAppearance="?android:textAppearanceMedium"
+        android:textColor="#FF0000"
+        android:visibility="gone" />
+
+</RelativeLayout>
